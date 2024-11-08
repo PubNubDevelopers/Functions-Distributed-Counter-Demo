@@ -81,9 +81,7 @@ function updateKeyCount(keyId, count) {
 //  IN PRODUCTION: Replace with your own logic to request an Access Manager token
 async function requestAccessManagerToken(userId) {
   try {
-    //const TOKEN_SERVER = "https://devrel-demos-access-manager.netlify.app/.netlify/functions/api/distributed-counter";
-    const TOKEN_SERVER =
-      "http://localhost:8065/.netlify/functions/api/distributed-counter";
+    const TOKEN_SERVER = "https://devrel-demos-access-manager.netlify.app/.netlify/functions/api/distributed-counter";
     const response = await fetch(`${TOKEN_SERVER}/grant`, {
       method: "POST",
       headers: {
