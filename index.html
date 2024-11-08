@@ -147,7 +147,7 @@
             All counters will be eventually consistent. When you vote, the counter for that key will update and
             everybody will be notified with a PubNub Signal. Since <a
                 href="https://www.pubnub.com/docs/general/messages/publish#send-signals" target="_blank">Signal delivery
-                is not guaranteed</a>, some updates may be missed, but the counters will <b>be correct</b>. To update
+                is not guaranteed</a>, some updates may be missed, but <b>the distributed counters will always be correct</b>. To update
             all vote tallies, <a href="javascript:init()">click here</a>
         </div>
 

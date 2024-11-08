@@ -59,6 +59,7 @@ async function load()
 
 
 async function init() {
+  topKey = 0;
   for (var i = 1; i <= 5; i++) {
     const result = await pubnub.signal({
       message: { init: true, batch: i },
