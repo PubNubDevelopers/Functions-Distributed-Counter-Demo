@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.8.2.10.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./keys.js"></script>
+    <script src="./index.js"></script>
+    <title>PubNub Distributed Counter Demo</title>
+</head>
+
+<body onload="load()">
+    <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="h1">
+            PubNub Distributed Counter Demo
+        </div>
+        <div class="">
+            <div class="h2" style="display:flex;flex-direction:row;align-items:center;justify-content:center">
+                The world's favorite key is currently:&nbsp;
+                <div class="key"><span id='topKey'></span>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex;align-items:start;flex-direction:column">
+            <div class="h3">Don't agree? Then vote for your favorite...</div>
+            <ul>
+                <li>Vote as many times as you like &amp; share with your friends around the world 🌐</li>
+                <li>Votes are tallied using <a
+                        href="https://www.pubnub.com/docs/serverless/functions/functions-apis/kvstore-module#counters"
+                        target="_blank">PubNub globally distributed counters</a></li>
+            </ul>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div class="keyboard">
+            <!-- First Row -->
+            <div class="key" data-key="49">1<div class="count" data-key="49">0</div>
+            </div>
+            <div class="key" data-key="50">2<div class="count" data-key="50">0</div>
+            </div>
+            <div class="key" data-key="51">3<div class="count" data-key="51">0</div>
+            </div>
+            <div class="key" data-key="52">4<div class="count" data-key="52">0</div>
+            </div>
+            <div class="key" data-key="53">5<div class="count" data-key="53">0</div>
+            </div>
+            <div class="key" data-key="54">6<div class="count" data-key="54">0</div>
+            </div>
+            <div class="key" data-key="55">7<div class="count" data-key="55">0</div>
+            </div>
+            <div class="key" data-key="56">8<div class="count" data-key="56">0</div>
+            </div>
+            <div class="key" data-key="57">9<div class="count" data-key="57">0</div>
+            </div>
+            <div class="key" data-key="48">0<div class="count" data-key="48">0</div>
+            </div>
+            <div class="key" data-key="189">-<div class="count" data-key="189">0</div>
+            </div>
+            <div class="key" data-key="187">=<div class="count" data-key="187">0</div>
+            </div>
+            <!-- Second Row -->
+            <div class="key" data-key="81">Q<div class="count" data-key="81">0</div>
+            </div>
+            <div class="key" data-key="87">W<div class="count" data-key="87">0</div>
+            </div>
+            <div class="key" data-key="69">E<div class="count" data-key="69">0</div>
+            </div>
+            <div class="key" data-key="82">R<div class="count" data-key="82">0</div>
+            </div>
+            <div class="key" data-key="84">T<div class="count" data-key="84">0</div>
+            </div>
+            <div class="key" data-key="89">Y<div class="count" data-key="89">0</div>
+            </div>
+            <div class="key" data-key="85">U<div class="count" data-key="85">0</div>
+            </div>
+            <div class="key" data-key="73">I<div class="count" data-key="73">0</div>
+            </div>
+            <div class="key" data-key="79">O<div class="count" data-key="79">0</div>
+            </div>
+            <div class="key" data-key="80">P<div class="count" data-key="80">0</div>
+            </div>
+            <div class="key" data-key="219">[<div class="count" data-key="219">0</div>
+            </div>
+            <div class="key" data-key="221">]<div class="count" data-key="221">0</div>
+            </div>
+            <!-- Third Row -->
+            <div class="key" data-key="65">A<div class="count" data-key="65">0</div>
+            </div>
+            <div class="key" data-key="83">S<div class="count" data-key="83">0</div>
+            </div>
+            <div class="key" data-key="68">D<div class="count" data-key="68">0</div>
+            </div>
+            <div class="key" data-key="70">F<div class="count" data-key="70">0</div>
+            </div>
+            <div class="key" data-key="71">G<div class="count" data-key="71">0</div>
+            </div>
+            <div class="key" data-key="72">H<div class="count" data-key="72">0</div>
+            </div>
+            <div class="key" data-key="74">J<div class="count" data-key="74">0</div>
+            </div>
+            <div class="key" data-key="75">K<div class="count" data-key="75">0</div>
+            </div>
+            <div class="key" data-key="76">L<div class="count" data-key="76">0</div>
+            </div>
+            <div class="key" data-key="186">;<div class="count" data-key="186">0</div>
+            </div>
+            <div class="key wide" data-key="13">Return<div class="count" data-key="13">0</div>
+            </div>
+            <!-- Fourth Row -->
+            <div class="key wide" data-key="16">Shift<div class="count" data-key="16">0</div>
+            </div>
+            <div class="key" data-key="90">Z<div class="count" data-key="90">0</div>
+            </div>
+            <div class="key" data-key="88">X<div class="count" data-key="88">0</div>
+            </div>
+            <div class="key" data-key="67">C<div class="count" data-key="67">0</div>
+            </div>
+            <div class="key" data-key="86">V<div class="count" data-key="86">0</div>
+            </div>
+            <div class="key" data-key="66">B<div class="count" data-key="66">0</div>
+            </div>
+            <div class="key" data-key="78">N<div class="count" data-key="78">0</div>
+            </div>
+            <div class="key" data-key="77">M<div class="count" data-key="77">0</div>
+            </div>
+            <div class="key" data-key="188">,<div class="count" data-key="188">0</div>
+            </div>
+            <div class="key" data-key="190">.<div class="count" data-key="190">0</div>
+            </div>
+            <div class="key" data-key="191">/<div class="count" data-key="191">0</div>
+            </div>
+            <!-- Fifth Row -->
+            <div class="key extra-wide" data-key="17">Ctrl<div class="count" data-key="17">0</div>
+            </div>
+            <div class="key space" data-key="32">Space<div class="count" data-key="32">0</div>
+            </div>
+            <div class="key extra-wide" data-key="18">Alt<div class="count" data-key="18">0</div>
+            </div>
+        </div>
+        <div class="small" style="max-width:90%">
+            All counters will be eventually consistent. When you vote, the counter for that key will update and
+            everybody will be notified with a PubNub Signal. Since <a
+                href="https://www.pubnub.com/docs/general/messages/publish#send-signals" target="_blank">Signal delivery
+                is not guaranteed</a>, some updates may be missed, but the counters will <b>be correct</b>. To update
+            all vote tallies, <a href="javascript:init()">click here</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
