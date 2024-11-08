@@ -4,7 +4,7 @@
 
 ## Demo
 
-A hosted version of this demo can be found at 
+A hosted version of this demo can be found at [https://distributed-counter.netlify.app/](https://distributed-counter.netlify.app/)
 
 ![Screenshot](./media/screenshot01.png)
 
