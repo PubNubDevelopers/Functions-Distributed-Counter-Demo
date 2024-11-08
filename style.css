@@ -199,6 +199,12 @@ a {
     width: 325px;
 }
 
+.key.favorite {
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .count {
     color: #aaa;
     white-space: nowrap;

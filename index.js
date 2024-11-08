@@ -71,9 +71,8 @@ function updateKeyCount(keyId, count) {
   const countElement = document.querySelector(`.count[data-key="${key}"]`);
   countElement.innerHTML = count;
   if (count > topKey) {
-    document.getElementById("topKey").innerText = document
-      .querySelector(`.key[data-key="${key}"]`)
-      .innerHTML.substring(0, 1);
+    var currentValue = document.querySelector(`.key[data-key="${key}"]`).innerHTML
+    document.getElementById("topKey").innerText = currentValue.substring(0, currentValue.indexOf('<'));
     topKey = count;
   }
 }
