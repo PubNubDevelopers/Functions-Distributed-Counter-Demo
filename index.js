@@ -36,7 +36,11 @@ async function load()
     channels: ["functionsdemo-counter-result"],
   });
   document.addEventListener("keydown", async function (event) {
-    const key = event.keyCode;
+    var key = event.keyCode;
+    if (key >= 96 && key <= 105) {
+      key -= 48;
+    }
+    console.log(key)
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
     if (keyElement) {
       keyElement.classList.add("pressed");
@@ -48,7 +52,10 @@ async function load()
   });
   
   document.addEventListener("keyup", function (event) {
-    const key = event.keyCode;
+    var key = event.keyCode;
+    if (key >= 96 && key <= 105) {
+      key -= 48;
+    }
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
   
     if (keyElement) {
