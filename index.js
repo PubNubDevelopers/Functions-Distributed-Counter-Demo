@@ -40,7 +40,6 @@ async function load()
     if (key >= 96 && key <= 105) {
       key -= 48;
     }
-    console.log(key)
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
     if (keyElement) {
       keyElement.classList.add("pressed");
