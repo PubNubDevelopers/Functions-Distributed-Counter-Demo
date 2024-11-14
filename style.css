@@ -38,9 +38,9 @@ body {
     /* Dark gray color for readability */
     text-align: center;
     /* Center-aligning the text */
-    margin-top: 20px;
+    margin-top: 10px;
     /* Add space above the heading */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     /* Add space below the heading */
     line-height: 1.2;
     /* Line height for improved readability */
@@ -59,9 +59,9 @@ body {
     /* Slightly lighter gray for differentiation */
     text-align: center;
     /* Left-aligning the text */
-    margin-top: 15px;
+    margin-top: 10px;
     /* Add space above the heading */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     /* Add space below the heading */
     line-height: 1.3;
     /* Line height for improved readability */
